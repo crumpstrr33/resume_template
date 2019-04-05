@@ -1,0 +1,125 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage[top=.75in, bottom=.75in, left=.75in, right=.75in]{geometry}
+
+%% Adds conditional for \newcommand
+\usepackage{xstring}
+%% Adds addmargin environment
+\usepackage{scrextend}
+%% Allows for hyperlink
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue,
+}
+%% Used for variable number arguements
+\usepackage{xparse}
+
+%% Remove page number
+\pagenumbering{gobble}
+
+%% Format headers using titlesec
+\usepackage{titlesec}
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+\titleformat*{\paragraph}{\large\bfseries}
+\titleformat*{\subparagraph}{\large\bfseries}
+\titlespacing*{\subsection}{0pt}{3pt}{5pt}
+
+%%% TEMPLATES %%%
+
+%-----------------------------------------------------------------%
+
+%%| EXPERIENCE |%%
+\newcommand{\experienceBullet}[7]{
+    \IfEqCase{#1}{
+    	{title}{\item\textbf{#2} \hfill \textbf{#3} 
+
+    	\emph{#4} \hfill #5 --- #6
+		\begin{addmargin}[0.5em]{1em}
+			\internalList{#7}
+		\end{addmargin}
+		}
+    	{notitle}{\item[]\emph{#4} \hfill #5 --- #6
+		\begin{addmargin}[0.5em]{1em}
+			\internalList{#7}
+		\end{addmargin}
+		}
+    }
+}
+\NewDocumentCommand{\internalList}{>{\SplitList{&&}} m}{
+	\begin{eduItemizeSquish}
+  	\ProcessList{#1}{\itemSinglet}
+  	\end{eduItemizeSquish}
+}
+\newcommand{\itemSinglet}[1]{
+  	\item[--]{#1}
+}
+\newenvironment{eduItemizeSquish}
+{\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}}
+{\end{itemize}}
+
+%-----------------------------------------------------------------%
+
+%%| EDUCATION |%%
+\newcommand{\educationBullet}[6]{
+	\item\textbf{#1} \hfill \textbf{#2} \\ \emph{#3} \hfill #4 --- #5
+
+	\begin{addmargin}[2em]{1em}
+	#6
+	\end{addmargin}
+	\vspace{3mm}
+}
+
+%-----------------------------------------------------------------%
+
+%%| TECHNICAL SKILLS |%%
+\newcommand{\techSkillsBullet}[2]{\item \textbf{#1: }{#2}}
+
+%-----------------------------------------------------------------%
+
+%%| GENERAL |%%
+\newenvironment{itemizeSquish}
+{\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}}
+{\end{itemize}\vspace{5pt}}
+
+%-----------------------------------------------------------------%
+
+
+\begin{document}
+{\Large\bfseries\begin{tabular}[c]{l}
+  FIRST LAST
+\end{tabular}}\hfill
+{\small\begin{tabular}[c]{r}
+  (555) 123-4567 $\bullet$ Current Town, ST\\
+  firstlast@youremail.com $\bullet$ \href{github.com/yourgithub}{\color{black}github.com/yourgithub}
+\end{tabular}}\\
+
+\nointerlineskip\hrulefill\\
+
+\subsection*{Experience}
+\begin{itemize}
+	\experienceBullet{title}{Company Name}{Town, ST}{Job Position}{Start Date}{End Date}{With the option of \textit{title} for the first curly bracket, the company name will be display. && Use double ampersand \&\& for the next dash.}
+
+	\experienceBullet{notitle}{Example without a title name}{Town, ST}{Job Position}{Start Date}{End Date}{With the option of \textit{notitle} for the first curly bracket, the company name will not be displayed.}
+	
+	\experienceBullet{title}{Other Company, Inc.}{Village, ST}{Job Position}{Start Date}{End Date}{Made things. && Did other things.}
+\end{itemize}
+
+\subsection*{Education}
+\begin{itemize}
+	\educationBullet{University College}{Town, ST}{Degree}{Start Year}{End Year}{Description of whatever, honors thesis, projects, papers, etc.}
+\end{itemize}
+
+\subsection*{Technical Skills}
+\begin{itemizeSquish}
+	\techSkillsBullet{Subcategory 1}{This, that, the other}
+
+	\techSkillsBullet{Subcategory 2}{Something, something else, also this}
+\end{itemizeSquish}
+
+\end{document}
