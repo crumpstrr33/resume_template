@@ -30,6 +30,18 @@
 
 %-----------------------------------------------------------------%
 
+%%| EDUCATION |%%
+\newcommand{\educationBullet}[6]{
+	\item\textbf{#1} \hfill \textbf{#2} \\ \emph{#3} \hfill #4 --- #5
+
+	\begin{addmargin}[2em]{1em}
+	#6
+	\end{addmargin}
+	\vspace{3mm}
+}
+
+%-----------------------------------------------------------------%
+
 %%| EXPERIENCE |%%
 \newcommand{\experienceBullet}[7]{
     \IfEqCase{#1}{
@@ -73,18 +85,6 @@
 
 %-----------------------------------------------------------------%
 
-%%| EDUCATION |%%
-\newcommand{\educationBullet}[6]{
-	\item\textbf{#1} \hfill \textbf{#2} \\ \emph{#3} \hfill #4 --- #5
-
-	\begin{addmargin}[2em]{1em}
-	#6
-	\end{addmargin}
-	\vspace{3mm}
-}
-
-%-----------------------------------------------------------------%
-
 %%| TECHNICAL SKILLS |%%
 \newcommand{\techSkillsBullet}[2]{\item \textbf{#1: }{#2}}
 
@@ -111,6 +111,11 @@
 
 \nointerlineskip\hrulefill\\
 
+\subsection*{Education}
+\begin{itemize}
+	\educationBullet{University College}{Town, ST}{Degree}{Start Year}{End Year}{Description of whatever, honors thesis, projects, papers, etc.}
+\end{itemize}
+
 \subsection*{Experience}
 \begin{itemize}
 	\experienceBullet{title}{Company Name}{Town, ST}{Job Position}{Start Date}{End Date}{With the option of \textit{title} for the first curly bracket, the company name will be display. && Use double ampersand \&\& for the next dash.}
@@ -125,11 +130,6 @@
 	\employmentBullet{Employment}{Position}{Start Date}{End Date}{For irrelevant jobs that only need a line max to describe it.}
 	\employmentBullet{Employment}{Position}{Start Date}{End Date}{Much more condsened than Experience.}
 \end{itemizeSquish}
-
-\subsection*{Education}
-\begin{itemize}
-	\educationBullet{University College}{Town, ST}{Degree}{Start Year}{End Year}{Description of whatever, honors thesis, projects, papers, etc.}
-\end{itemize}
 
 \subsection*{Technical Skills}
 \begin{itemizeSquish}
