@@ -63,6 +63,16 @@
 
 %-----------------------------------------------------------------%
 
+%%| EMPLOYMENT |%%
+\newcommand{\employmentBullet}[5]{
+	\item\textbf{#1} \emph{#2}  \hfill #3 --- #4 
+		\begin{itemize}
+			\item[--] #5
+		\end{itemize}
+}
+
+%-----------------------------------------------------------------%
+
 %%| EDUCATION |%%
 \newcommand{\educationBullet}[6]{
 	\item\textbf{#1} \hfill \textbf{#2} \\ \emph{#3} \hfill #4 --- #5
@@ -109,6 +119,12 @@
 	
 	\experienceBullet{title}{Other Company, Inc.}{Village, ST}{Job Position}{Start Date}{End Date}{Made things. && Did other things.}
 \end{itemize}
+
+\subsection*{Employment}
+\begin{itemizeSquish}
+	\employmentBullet{Employment}{Position}{Start Date}{End Date}{For irrelevant jobs that only need a line max to describe it.}
+	\employmentBullet{Employment}{Position}{Start Date}{End Date}{Much more condsened than Experience.}
+\end{itemizeSquish}
 
 \subsection*{Education}
 \begin{itemize}
