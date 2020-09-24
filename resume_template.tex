@@ -31,7 +31,7 @@
 %-----------------------------------------------------------------%
 
 %%| EDUCATION |%%
-\newcommand{\educationBullet}[6]{
+\newcommand{\education}[6]{
 	\item\textbf{#1} \hfill \textbf{#2} \\ \emph{#3} \hfill #4 --- #5
 
 	\begin{addmargin}[2em]{1em}
@@ -43,7 +43,7 @@
 %-----------------------------------------------------------------%
 
 %%| EXPERIENCE |%%
-\newcommand{\experienceBullet}[7]{
+\newcommand{\experience}[7]{
     \IfEqCase{#1}{
     	{title}{\item\textbf{#2} \hfill \textbf{#3} 
 
@@ -76,7 +76,7 @@
 %-----------------------------------------------------------------%
 
 %%| EMPLOYMENT |%%
-\newcommand{\employmentBullet}[5]{
+\newcommand{\employment}[5]{
 	\item\textbf{#1} \emph{#2}  \hfill #3 --- #4 
 		\begin{itemize}
 			\item[--] #5
@@ -86,7 +86,7 @@
 %-----------------------------------------------------------------%
 
 %%| TECHNICAL SKILLS |%%
-\newcommand{\techSkillsBullet}[2]{\item \textbf{#1: }{#2}}
+\newcommand{\techSkills}[2]{\item \textbf{#1: }{#2}}
 
 %-----------------------------------------------------------------%
 
@@ -113,29 +113,29 @@
 
 \subsection*{Education}
 \begin{itemize}
-	\educationBullet{University College}{Town, ST}{Degree}{Start Year}{End Year}{Description of whatever, honors thesis, projects, papers, etc.}
+	\education{University College}{Town, ST}{Degree}{Start Year}{End Year}{Description of whatever, honors thesis, projects, papers, etc.}
 \end{itemize}
 
 \subsection*{Experience}
 \begin{itemize}
-	\experienceBullet{title}{Company Name}{Town, ST}{Job Position}{Start Date}{End Date}{With the option of \textit{title} for the first curly bracket, the company name will be display. && Use double ampersand \&\& for the next dash.}
+	\experience{title}{Company Name}{Town, ST}{Job Position}{Start Date}{End Date}{With the option of \textit{title} for the first curly bracket, the company name will be display. && Use double ampersand \&\& for the next dash.}
 
-	\experienceBullet{notitle}{Example without a title name}{Town, ST}{Job Position}{Start Date}{End Date}{With the option of \textit{notitle} for the first curly bracket, the company name will not be displayed.}
+	\experience{notitle}{Example without a title name}{Town, ST}{Job Position}{Start Date}{End Date}{With the option of \textit{notitle} for the first curly bracket, the company name will not be displayed.}
 	
-	\experienceBullet{title}{Other Company, Inc.}{Village, ST}{Job Position}{Start Date}{End Date}{Made things. && Did other things.}
+	\experience{title}{Other Company, Inc.}{Village, ST}{Job Position}{Start Date}{End Date}{Made things. && Did other things.}
 \end{itemize}
 
 \subsection*{Employment}
 \begin{itemizeSquish}
-	\employmentBullet{Employment}{Position}{Start Date}{End Date}{For irrelevant jobs that only need a line max to describe it.}
-	\employmentBullet{Employment}{Position}{Start Date}{End Date}{Much more condsened than Experience.}
+	\employment{Employment}{Position}{Start Date}{End Date}{For irrelevant jobs that only need a line max to describe it.}
+	\employment{Employment}{Position}{Start Date}{End Date}{Much more condsened than Experience.}
 \end{itemizeSquish}
 
 \subsection*{Technical Skills}
 \begin{itemizeSquish}
-	\techSkillsBullet{Subcategory 1}{This, that, the other}
+	\techSkills{Subcategory 1}{This, that, the other}
 
-	\techSkillsBullet{Subcategory 2}{Something, something else, also this}
+	\techSkills{Subcategory 2}{Something, something else, also this}
 \end{itemizeSquish}
 
 \end{document}
